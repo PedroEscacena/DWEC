@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kill team</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h3>EXAMEN U4</h3>
+    <form name="formulario" id="formulario" method="get">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" value="nombre"><br>
+        <label for="anyo">Año: </label>
+        <input type="number" id="anyo"><br>
+        <label for="habilidades">Habilidades: </label>
+        <input type="text" id="habilidades"><br>
+        <label for="tirada">Tirada</label>
+        <input type="text" id="tirada"><br>
+
+        <select name="rol" id="rol">
+            <option value="0" selected="selected">Seleccione rol</option>
+            <option value="cob">COMBATE</option>
+            <option value="com">COMUNICACIONES</option>
+            <option value="dem">DEMOLICIONES</option>
+            <option value="fan">FANATICO</option>
+        </select><br>
+        <label for="password">Contraseña</label>
+        <input type="password" id="password"><br>
+        <input type="reset" name="limpiar" id="button" value="reset">
+        <input type="submit" name="enviar" id="enviar" value="Enviar">
+    </form>
+    <div id="errores"></div>
+    <div id="ultima_tirada"></div>
+</body>
+
+</html>
