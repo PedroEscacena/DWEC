@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entregable DOM</title>
+    <script>
+        window.addEventListener("load", inicio);
+
+        function inicio() {
+            document.getElementById("generator").addEventListener("click", generator);
+
+        }
+
+
+        function generator() {
+            let body = document.getElementsByTagName("body")[0];
+            let hr = document.createElement("hr");
+            let tabla = document.createElement("table");
+            let num_columnas = document.getElementById("numcolumn").value;
+            let num_filas = document.getElementById("numfilas").value;
+            let color = document.getElementById("seleccionable").value;
+            let checkbox_header = document.getElementById("headeryes");
+            let grosor = document.getElementById("grosorborde").value;
+            let textdefault = document.getElementById("defaulttext").value;
+            let tr = document.createElement("tr");
+
+            document.body.appendChild(hr);
+            document.body.appendChild(tabla);
+            document.body.appendChild(hr);
+
+            if (grosor !== '') {
+                tabla.style.border = grosor.value + 'px solid ' + color.value;
+
+            }
+            if (num_columnas !== '' && num_filas !== '' && grosor !== '') {
+                for (let i = 0; i < num_filas; i++) {
+                    tabla.appendChild(tr);
+                    for (let j = 0; j < num_columnas; j++) {
+                        if (i == 0 && checkbox_header.checked) {
+                            let th = document.createElement('th');
+                            th.style.border = grosor + 'px solid ' + color;
+                            tr.appendChild(th);
+
+
+
+                            if (textdefault !== '') {
+                                th.innerHTML = textdefault;
+                            }
+
+                        } else {
+                            let td = document.createElement('td');
+                            td.style.border = grosor + 'px solid' + borderColor;
+                            tr.appendChild(td);
+
+                            if (textdefault !== '') {
+                                td.innerHTML = textdefault;
+                            }
+
+                        }
+                    }
+
+                }
+            }
+            if (checkbox_header.checked) {
+                for (let i = 0; i < num_columnas; i++) {
+                    let atributo = "input" + i;
+                    let create_input = document.createElement('input');
+                    create_input.setAttribute("type", "text");
+                    create_input.setAttribute('id', atributo);
+                    checkbox_header.appendChild(create_input);
+                }
+            }
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <label>Número de columnas</label>
+    <input type="text" id="numcolumn" />
+    <br>
+    <label>Número de filas</label>
+    <input type="text" id="numfilas" />
+    <br>
+    <label>Crear o no header</label>
+    <input type="checkbox" id="headeryes" /><br>
+    <label>Texto por defecto</label>
+    <input type="text" id="defaulttext" /><br>
+    <label>Grosor del borde</label>
+    <input type="text" id="grosorborde" /><br>
+    <label>seleccionable</label>
+    <select name="colorborde" id="seleccionable">
+
+        <option value="green">verde</option>
+        <option value="pink">rosa</option>
+        <option value="blue">azul</option>
+        <option value="black" selected>negro</option>
+
+    </select><br>
+    <label>Generar tabla</label>
+    <input type="button" value="Pulse para tabla" id="generator" /><br>
+
+</body>
+
+</html>
