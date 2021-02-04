@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacunación</title>
+    <style>
+        tr {
+            border: 1px black solid
+        }
+
+        td {
+            border: 1px black solid
+        }
+    </style>
+</head>
+
+<body>
+    <label>CC.AA</label>
+    <select name="selector" id="seleccionable">
+        <option value="Andalucía">Andalucía</option>
+        <option value="aragon">aragon</option>
+        <option value="asturias">asturias</option>
+        <option value="baleares">baleares</option>
+        <option value="canarias">canarias</option>
+        <option value="cantabria">cantabria</option>
+        <option value="castillaleon">castilla y leon</option>
+        <option value="castillamancha">castilla la mancha</option>
+        <option value="catalunya">cataluña</option>
+        <option value="cvalenciana">C.Valenciana</option>
+        <option value="extremadura">Extremadura</option>
+        <option value="galicia">Galicia</option>
+        <option value="larioja">La Rioja</option>
+        <option value="madrid">Madrid</option>
+        <option value="murcia">Murcia</option>
+        <option value="navarra">navarra</option>
+        <option value="paisvasco">pais vasco</option>
+        <option value="ceuta">ceuta</option>
+        <option value="melilla">melilla</option>
+
+
+    </select>
+    <label>D.Entregadas</label>
+    <input type="number" id="dentregadas" />
+    <label>D.Admin</label>
+    <input type="number" id="dadmin" />
+    <label>D.Completa</label>
+    <input type="number" id="dcompleta" />
+    <label>P.Entregadas</label>
+    <input type="number" id="pentregadas" />
+    <label>P.Admin</label>
+    <input type="number" id="padmin" />
+    <label>P.completa</label>
+    <input type="number" id="pcompleta" />
+
+
+    <input type="button" value="Modificar Datos" id="modificar">
+    <br>
+    <p>Resultados</p>
+    <div id="datosweb">Datos cargados de la WEB</div>
+    <br>
+
+
+
+    <input type="button" value="Cargar datos vacunación(XMLHttpRequest)" id="xmlenviar">
+    <input type="button" value="Cargar datos vacunación(Fetch)" id="fetchenviar">
+
+    <table id="tabla"></table>
+</body>
+
+</html>
